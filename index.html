@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Room homepage</title>
+
+    <!-- Link Sheet -->
+    <link rel="stylesheet" href="./style.css" />
+
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- JS Script -->
+    <script src="./script.js" defer></script>
+  </head>
+  <body class="min-h-dvh relative">
+    <!-- header section -->
+    <header
+      class="absolute top-0 left-0 right-0 flex items-center gap-16 p-8 justify-center small:justify-start bg-gradient-to-b from-black/45 small:from-black/20"
+    >
+      <!-- hamburger button -->
+      <button
+        id="menu-open"
+        class="appearance-none absolute left-6 small:hidden"
+      >
+        <img
+          src="./images/icon-hamburger.svg"
+          alt=""
+          class="pointer-events-none"
+        />
+      </button>
+
+      <!-- logo -->
+      <img src="./images/logo.svg" alt="logo" />
+      <!-- logo end -->
+
+      <!-- nav -->
+      <nav
+        id="nav"
+        class="flex items-center justify-between gap-6 text-black small:text-white fixed small:relative transition-[top] duration-300 -top-full left-0 right-0 p-8 small:p-0 bg-white small:bg-transparent"
+      >
+        <!-- close hamburger -->
+        <button id="menu-close" class="appearance-none small:hidden">
+          <img
+            src="./images/icon-close.svg"
+            alt=""
+            class="pointer-events-none"
+          />
+        </button>
+        <!-- close hamburger end -->
+        <!-- list items -->
+        <ul class="flex items-center gap-6 list-none">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <!-- list items end -->
+      </nav>
+      <!-- nav end -->
+      <!-- hamburger button end -->
+    </header>
+    <!-- header section end -->
+
+    <main>
+      <section id="slider" class="flex flex-col">
+        <div id="image-slider">
+          <img src="./images/desktop-image-hero-1.jpg" alt="" />
+          <img src="./images/desktop-image-hero-2.jpg" alt="" />
+          <img src="./images/desktop-image-hero-3.jpg" alt="" />
+        </div>
+      </section>
+    </main>
+    Discover innovative ways to decorate We provide unmatched quality, comfort,
+    and style for property owners across the country. Our experts combine form
+    and function in bringing your vision to life. Create a room in your own
+    style with our collection and make your property a reflection of you and
+    what you love. Shop now We are available all across the globe With stores
+    all over the world, it's easy for you to find furniture for your home or
+    place of business. Locally, we’re in most major cities throughout the
+    country. Find the branch nearest you using our store locator. Any questions?
+    Don't hesitate to contact us today. Shop now Manufactured with the best
+    materials Our modern furniture store provide a high level of quality. Our
+    company has invested in advanced technology to ensure that every product is
+    made as perfect and as consistent as possible. With three decades of
+    experience in this industry, we understand what customers want for their
+    home and office. Shop now About our furniture Our multifunctional collection
+    blends design and function to suit your individual taste. Make each room
+    unique, or pick a cohesive theme that best express your interests and what
+    inspires you. Find the furniture pieces you need, from traditional to
+    contemporary styles or anything in between. Product specialists are
+    available to help you create your dream space.
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </body>
+</html>
