@@ -23,10 +23,16 @@
     <!-- JS Script -->
     <script src="./script.js" defer></script>
   </head>
-  <body class="min-h-dvh relative">
+  <body class="min-h-dvh relative dark:bg-black/95 dark:text-white">
+    <!-- overlay -->
+    <div
+      id="overlay"
+      class="mid:hidden absolute inset-0 bg-black/55 z-10 pointer-events-none transition-opacity duration-300 invisible opacity-0"
+    ></div>
+    <!-- overlay end -->
     <!-- header section -->
     <header
-      class="absolute top-0 left-0 right-0 flex items-center gap-16 p-8 justify-center small:justify-start bg-gradient-to-b from-black/45 small:from-black/20"
+      class="z-10 absolute top-0 left-0 right-0 flex items-center gap-16 p-8 justify-center small:justify-start max-[500px]:bg-gradient-to-b from-black/25"
     >
       <!-- hamburger button -->
       <button
@@ -50,16 +56,17 @@
         class="flex items-center justify-between gap-6 text-black small:text-white fixed small:relative transition-[top] duration-300 -top-full left-0 right-0 p-8 small:p-0 bg-white small:bg-transparent"
       >
         <!-- close hamburger -->
-        <button id="menu-close" class="appearance-none small:hidden">
-          <img
-            src="./images/icon-close.svg"
-            alt=""
-            class="pointer-events-none"
-          />
+        <button
+          id="menu-close"
+          class="appearance-none small:hidden min-w-max grid place-content-center text-3xl text-vd_gray transition-all duration-200 hover:text-red-300"
+        >
+          <ion-icon name="close-outline"></ion-icon>
         </button>
         <!-- close hamburger end -->
         <!-- list items -->
-        <ul class="flex items-center gap-6 list-none">
+        <ul
+          class="flex items-center gap-6 max-[340px]:gap-4 max-[350px]:text-sm list-none mid:text-lg mid:gap-8 small:[&>li]:after:bg-white"
+        >
           <li><a href="#">Home</a></li>
           <li><a href="#">Shop</a></li>
           <li><a href="#">About</a></li>
@@ -73,33 +80,105 @@
     <!-- header section end -->
 
     <main>
-      <section id="slider" class="flex flex-col">
-        <div id="image-slider">
-          <img src="./images/desktop-image-hero-1.jpg" alt="" />
-          <img src="./images/desktop-image-hero-2.jpg" alt="" />
-          <img src="./images/desktop-image-hero-3.jpg" alt="" />
+      <section id="slider" class="grid mid:grid-cols-5">
+        <!-- image slider -->
+        <div
+          id="image-slider"
+          class="h-96 mid:h-full overflow-hidden relative isolate mid:col-span-3 [&>img]:absolute [&>img]:h-full [&>img]:w-full [&>img]:inset-0 [&>img]:object-cover [&>img]:pointer-events-none [&>img]:z-[-1]"
+        >
+          <img
+            id="display-image"
+            src="./images/desktop-image-hero-1.jpg"
+            alt=""
+          />
+
+          <!-- slider butons -->
+          <div
+            id="buttons"
+            class="flex absolute bottom-0 right-0 [&>button]:size-12 [&>button]:bg-black [&>button]:grid [&>button]:place-content-center [&>button]:appearance-none [&>button]:transition-colors [&>button]:duration-300"
+          >
+            <button id="prevBtn" class="hover:bg-vd_gray">
+              <img
+                src="./images/icon-angle-left.svg"
+                alt=""
+                class="pointer-events-none"
+              />
+            </button>
+            <button id="nextBtn" class="hover:bg-vd_gray">
+              <img
+                src="./images/icon-angle-right.svg"
+                alt=""
+                class="pointer-events-none"
+              />
+            </button>
+          </div>
         </div>
+        <!-- image slider end -->
+        <!-- call to action -->
+        <div
+          class="flex flex-col py-10 mid:py-20 px-10 mid:px-16 gap-4 mid:col-span-2"
+        >
+          <div id="copy-block" class="space-y-5">
+            <h1
+              id="header"
+              class="text-[2.2rem] font-semibold tracking-tight mid:leading-7 leading-9"
+            >
+              Discover innovative ways to decorate
+            </h1>
+            <p
+              id="paragraph"
+              class="text-vd_gray mid:text-base dark:text-dark_gray"
+            >
+              We provide unmatched quality, comfort, and style for property
+              owners across the country. Our experts combine form and function
+              in bringing your vision to life. Create a room in your own style
+              with our collection and make your property a reflection of you and
+              what you love.
+            </p>
+          </div>
+
+          <!-- shop now -->
+          <button
+            class="max-w-max uppercase tracking-[.45rem] flex items-center gap-4 font-medium hover:text-dark_gray hover:italic dark:hover:text-vd_gray"
+          >
+            shop now
+            <!-- arrow svg -->
+            <ion-icon
+              name="arrow-forward-outline"
+              class="-translate-y-[0.1rem]"
+            ></ion-icon>
+          </button>
+        </div>
+        <!-- call to action -->
+      </section>
+
+      <section class="flex flex-wrap">
+        <img
+          src="./images/image-about-dark.jpg"
+          alt=""
+          class="flex-1 min-w-[280px] object-cover"
+        />
+        <div class="flex-1 min-w-[280px] p-12 space-y-4">
+          <h2 class="text-lg font-medium uppercase tracking-[.25rem]">
+            About our furniture
+          </h2>
+
+          <p class="text-vd_gray dark:text-dark_gray">
+            Our multifunctional collection blends design and function to suit
+            your individual taste. Make each room unique, or pick a cohesive
+            theme that best express your interests and what inspires you. Find
+            the furniture pieces you need, from traditional to contemporary
+            styles or anything in between. Product specialists are available to
+            help you create your dream space.
+          </p>
+        </div>
+        <img
+          src="./images/image-about-light.jpg"
+          alt=""
+          class="flex-1 min-w-[280px] max-[836px]:max-h-72 object-cover"
+        />
       </section>
     </main>
-    Discover innovative ways to decorate We provide unmatched quality, comfort,
-    and style for property owners across the country. Our experts combine form
-    and function in bringing your vision to life. Create a room in your own
-    style with our collection and make your property a reflection of you and
-    what you love. Shop now We are available all across the globe With stores
-    all over the world, it's easy for you to find furniture for your home or
-    place of business. Locally, we’re in most major cities throughout the
-    country. Find the branch nearest you using our store locator. Any questions?
-    Don't hesitate to contact us today. Shop now Manufactured with the best
-    materials Our modern furniture store provide a high level of quality. Our
-    company has invested in advanced technology to ensure that every product is
-    made as perfect and as consistent as possible. With three decades of
-    experience in this industry, we understand what customers want for their
-    home and office. Shop now About our furniture Our multifunctional collection
-    blends design and function to suit your individual taste. Make each room
-    unique, or pick a cohesive theme that best express your interests and what
-    inspires you. Find the furniture pieces you need, from traditional to
-    contemporary styles or anything in between. Product specialists are
-    available to help you create your dream space.
 
     <div class="attribution">
       Challenge by
@@ -107,5 +186,15 @@
         >Frontend Mentor</a
       >. Coded by <a href="#">Your Name Here</a>.
     </div>
+
+    <!-- IonIcons script -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
   </body>
 </html>
